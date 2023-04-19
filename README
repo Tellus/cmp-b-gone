@@ -1,0 +1,54 @@
+# CMP plugin for QualWeb accessibility evaluator tool
+
+The purpose of this plugin is to allow users of QualWeb to try and suppress CMP (Consent Management Platform) banners.
+
+These banners are required on sites operated in the European Union, and are thus present on tonnes of websites.
+
+The plugin tags onto into QualWeb's pre- and post- hooks and tries to identify the implementation in use on the site. If successful, it suppresses the banner, so it doesn't get evaluated by QualWeb.
+
+The usefulness of this is twofold:
+
+1. Some websites hide or completely withhold their actual content until consent to a cookie has been given. This plugin enables evaluating those sites with QualWeb by automating the consent action.
+2. Many CMP banners have accessibility issues that are inherent to the implementation, and not the site itself. This causes a skew in the results of sites, giving the impression, for example, that the website has contrast issues when in fact the only component with contrast issues is the banner.
+
+*NOTE: this software was built for the explicit purposes of enabling and enhancing automated accessibility testing, **NOT** to bypass the CMP banner for otherwise normal use of a website. If you use this software to bypass a banner it is presumed that you have accepted all terms of the site's use, including its cookie policy.*
+
+# Installation
+
+The package is designed to plug into QualWeb in a NodeJS project, and thus cannot be used if QualWeb's CLI is used (for example, if installed globally).
+
+Install it like any other package:
+
+`pnpm install @inqludeit/qualweb-plugin-cmp`
+
+## Basic use
+
+Sometime *before* calling `QualWeb#evaluate()`:
+
+```typescript
+// Or use the non-async version.
+qualweb.use(await CmpManager.plugin());
+```
+
+During evaluation, the plugin will try to identify the CMP in use on a site to be evaluated. If it *fails* to detect any CMP, the evaluation of that URL will also be caused to fail.
+
+## Beyond basic use
+
+# CMP descriptors
+
+We call the object that can identify and bypass a cookie banner a "descriptor". 
+
+Out of the box, this package comes bundled with a bunch of descriptors we've written by hand. They are all "simple" descriptors, based exclusively on CSS selectors.
+
+Defining one of the descriptors is simply a matter of creating a new YAML file in the folder `dist/descriptors/yaml` and filling it out. See the other files in the folder for examples of how to do it.
+
+It's also possible to add descriptors at run-time, by calling `CmpManager#addDescriptors()` or `CmpManager#addFrom()`. Descriptors added from code should extend the class `CMPDescriptor`, and implement the following:
+- `isCMPPresent()` should return true if the CMP is detected on a page.
+- `isCMPActive()` should return true if the CMP is *active* on a page. This differs from *detection* in that the banner should be visible/present for the user, not just in the DOM.
+- `acceptAll()` should perform the actual work of bypassing the CMP banner.
+
+In the basic descriptor `SimpleCMPDescriptor`, all of these are performed using a combination of CSS selectors and the methods exposed on Puppeteer's Page object.
+
+## Future descriptors
+
+It would be nice to create a centralized repository of CMP descriptors, like https://cookiedatabase.org, but usable by code.
