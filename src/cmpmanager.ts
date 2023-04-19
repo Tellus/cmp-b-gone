@@ -1,7 +1,7 @@
 import { Logger, guessCaller } from './util';
 import { Page } from 'puppeteer';
 import * as Descriptors from './descriptors';
-import glob from 'glob';
+import { globSync } from 'glob';
 import { DescriptorConsentData } from './types';
 import * as path from 'path';
 import YamlDescriptor from './descriptors/yaml';
@@ -60,7 +60,7 @@ export class CMPManager {
 
   /**
    * Constructs an empty CMPManager. Be sure to add some descriptors (see
-   * addDescriptors or addFrom) before use.
+   * {@link addDescriptors} or {@link addFrom}) before use.
    */
   protected constructor() {
     // We discover the tag Function early and store it, simply as an efficiency
@@ -167,7 +167,7 @@ export class CMPManager {
 
     const paths: Set<string> = new Set();
     for (const p of path) {
-      glob.sync(p).forEach((p) => paths.add(p));
+      globSync(p).forEach((p) => paths.add(p));
     }
 
     const newDescriptors = (await Promise.all(Array.from(paths).map(p => this.#importSingle(p)))).filter(d => d !== null) as Descriptors.CMPDescriptor[];

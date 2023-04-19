@@ -1,7 +1,14 @@
 import type { Logger } from 'winston';
+
 let winston: any;
 try {
   winston = require('winston');
+  console.debug(winston.config);
+
+  if (Object.keys(winston.loggers.loggers).length === 0) {
+    console.warn('Winston present, but there does not seem to be any loggers configured.');
+    winston = undefined;
+  }
 } catch (_err: unknown) {
   console.log('winston is not installed. No logging will happen.');
 }
@@ -9,10 +16,26 @@ try {
 type LoggerInstance = Pick<Logger, 'log'>;
 
 const _Logger = winston || {
-  log(level: string): void {
+  log(level: string, msg: string): void {
     // Noop
     console.log('noop');
-  }
+  },
+  info(msg: string): void {
+    // Noop
+    console.log('noop');
+  },
+  debug(msg: string): void {
+    // Noop
+    console.log('noop');
+  },
+  verbose(msg: string): void {
+    // Noop
+    console.log('noop');
+  },
+  warn(msg: string): void {
+    // Noop
+    console.log('noop');
+  },
 }
 
 export { _Logger as Logger }

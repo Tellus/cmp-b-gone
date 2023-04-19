@@ -1,3 +1,7 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "mochaExplorer.optsFile": "",
+  "mochaExplorer.env": {
+    "TS_NODE_PROJECT": "tsconfig.test.json"
+  }
 }
