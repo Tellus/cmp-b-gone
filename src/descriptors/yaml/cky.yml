@@ -1,0 +1,14 @@
+# Seen on nvl.org
+name: cky
+cookieName:
+  - cookieyes-consent
+selectors:
+  presence:
+    - div.cky-consent-container
+    - div.cky-overlay
+  acceptAll:
+    - button.cky-btn-accept
+  acceptDefault:
+    - button.cky-btn-accept
+  rejectAll:
+    - button.cky-btn-reject

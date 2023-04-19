@@ -1,0 +1,7 @@
+name: virum-gym.dk
+cookieName: functional_cookie_accepted # maybe also some_cookie_accepted and engine_cookie_accepted
+selectors:
+  presence: .cookie_alert
+  acceptAll: button#accept
+  acceptDefault: null
+  rejectAll: null

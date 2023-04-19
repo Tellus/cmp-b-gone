@@ -1,0 +1,11 @@
+name: laesekompas.dk
+cookieName:
+  - did-accept-cookies
+  # Also a cookie with a name specific to the site's URL. MEEEEH
+selectors:
+  presence: .cookie-warning-container
+  acceptAll:
+    - button[data-cy="cookie-accept-button"]
+  acceptDefault: null
+  rejectAll:
+    - button[data-cy="cookie-reject-button"]

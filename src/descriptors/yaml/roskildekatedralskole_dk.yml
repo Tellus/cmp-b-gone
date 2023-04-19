@@ -1,0 +1,14 @@
+# Seen on kkskole
+name: roskildekatedralskole.dk
+cookieName:
+  - cc_cookie_accept
+  - cc_cookie_decline
+selectors:
+  presence:
+    - div.cc-cookies
+  acceptAll:
+    - a.cc-cookie-accept
+    - a[href="#accept"]
+  rejectAll:
+    - a.cc-cookie-decline
+    - a[href="#decline"]

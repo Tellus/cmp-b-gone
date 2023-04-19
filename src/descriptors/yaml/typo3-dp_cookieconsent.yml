@@ -1,0 +1,14 @@
+name: typo3-dp_cookieconsent
+cookieName:
+  - dp_cookieconsent_key
+  - dp_cookieconsent_status
+selectors:
+  presence:
+    # - div#cookieconsent:window
+    - div[aria-label="cookieconsent"]
+  acceptAll:
+    - a.cc-allow-all
+  acceptDefault:
+    - a.cc-allow
+  rejectAll:
+    - a.cc-deny

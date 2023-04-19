@@ -1,0 +1,11 @@
+# https://github.com/wp-plugins/cookie-law-info
+name: wp-plugins/cookie-law-info
+cookieName: moove_gdpr_popup
+selectors:
+  presence:
+    - div#cookie-law-info-bar
+  acceptAll:
+    - a#wt-cli-accept-all-btn # Seen on fladebakker.dk
+    - a#cookie_action_close_header # Seen on flextrafik.dk
+  rejectAll:
+    - a#cookie_action_close_header_reject # Seen on fladebakker.dk

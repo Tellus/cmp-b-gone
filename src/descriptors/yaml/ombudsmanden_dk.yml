@@ -1,0 +1,8 @@
+# SEEMS like it may be third-party (there's a hidden "accept selected" button)
+name: ombudsmanden.dk
+cookieName: ombudsmanden-dk-cookie-consent
+selectors:
+  presence: section#cookie-popup
+  acceptAll: button#cp-accept-all
+  acceptDefault: null
+  rejectAll: button#cp-reject-all

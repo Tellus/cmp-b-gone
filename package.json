@@ -1,0 +1,78 @@
+{
+  "name": "@inqludeit/cmp",
+  "version": "0.0.0-development",
+  "description": "Consent management platform... management.",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "./src/index.ts",
+  "directories": {
+    "lib": "src"
+  },
+  "publishConfig": {
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./*": {
+        "default": "./dist/*.js",
+        "types": "./dist/*.d.ts"
+      }
+    }
+  },
+  "scripts": {
+    "test": "pnpm test:unit",
+    "test:unit": "cross-env TS_NODE_PROJECT=tsconfig.test.json mocha",
+    "test:coverage": "nyc mocha",
+    "ts-run": "node -r ts-node/register",
+    "build": "npx tsc --build -v",
+    "build:force": "npx tsc --build -f -v",
+    "clean": "npx tsc --build --clean && rimraf dist",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.govcloud.dk/digst-webtilsyn/backend.git",
+    "directory": "packages/cmp"
+  },
+  "author": "Johannes L. Borresen <jlb@inqludeit.dk>",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "glob": "^10.2.1",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
+    "puppeteer": "^19.9.1",
+    "rimraf": "^5.0.0",
+    "semantic-release": "^19.0.5",
+    "semantic-release-monorepo": "^7.0.5",
+    "tslib": "^2.5.0"
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/chai": "^4.3.4",
+    "@types/glob": "^8.1.0",
+    "@types/js-yaml": "^4.0.5",
+    "@types/lodash": "^4.14.194",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "18",
+    "chai": "^4.3.7",
+    "http-server": "^14.1.1",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4"
+  },
+  "optionalDependencies": {
+    "winston": "^3.8.2"
+  }
+}

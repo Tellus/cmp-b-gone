@@ -1,0 +1,7 @@
+name: autismecenterguldborgsund.dk
+cookieName: Cookies_Accepted
+selectors:
+  presence: div#cookie_box
+  acceptAll: a#cookieOkBtn
+  acceptDefault: null
+  rejectAll: null

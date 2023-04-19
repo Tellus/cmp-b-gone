@@ -1,0 +1,18 @@
+name: GoBasic (?)
+cookieName:
+  - CookieConsent
+  - GoBasicAffinity
+  # Also a cookie with a name specific to the site's URL. MEEEEH
+selectors:
+  presence:
+    - ".cookie-container"
+    - div.cookie-banner
+    - div[aria-label="Cookie banner"]
+  acceptAll:
+    - ".accept-all-button"
+    - button.accept-cookies
+  acceptDefault:
+    - ".cookies-technical-button"
+  rejectAll:
+    - ".cookies-technical-button"
+    - button.reject-cookies

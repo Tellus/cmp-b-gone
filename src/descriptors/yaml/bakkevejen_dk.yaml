@@ -1,0 +1,10 @@
+name: bakkevejen.dk
+cookieName:
+  - cookie_consent_accept
+selectors:
+  presence:
+    - div#cookie
+  acceptAll:
+    - button.cookie__accept
+  rejectAll:
+    - button.cookie__deny

@@ -1,0 +1,7 @@
+name: ku.dk
+cookieName: ku-cookie-consent
+selectors:
+  presence: div#ccc
+  acceptAll: .ccc-buttons > button.last-of-type # This is VERY wonky, just hoping the order stays the same.
+  acceptDefault: null
+  rejectAll: .ccc-buttons > button.first-of-type

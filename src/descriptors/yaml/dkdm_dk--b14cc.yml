@@ -1,0 +1,11 @@
+name: dkdm.dk
+cookieName: cookieOptOut
+selectors:
+  presence:
+    - ".b14cc.b14cc--show"
+  acceptAll:
+    - ".b14cc-action--set-all"
+  acceptDefault:
+    - ".b14cc-action--set-link"
+  rejectAll:
+    - ".b14cc-action--set-none"

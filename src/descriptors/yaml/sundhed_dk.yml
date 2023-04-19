@@ -1,0 +1,11 @@
+name: sundhed.dk
+cookieName: sdk-user-accept-cookies
+selectors:
+  presence:
+    - ".cookie-box"
+  acceptAll:
+    - a[ng-click="vm.acceptCookie()"]
+  acceptDefault:
+    - a[ng-click="vm.rejectCookie()"]
+  rejectAll:
+    - a[ng-click="vm.rejectCookie()"]

@@ -1,0 +1,11 @@
+name: glostrup.dk
+cookieName:
+  - cookieDisclaimer.AllowCookies
+selectors:
+  presence:
+    - div#cookieDisclaimerOuter
+    - div#cookieDisclaimer
+  acceptAll:
+    - a.enableCookies
+  rejectAll:
+    - a.disableCookies

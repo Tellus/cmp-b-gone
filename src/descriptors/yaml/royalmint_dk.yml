@@ -1,0 +1,6 @@
+name: royalmint.dk
+cookieName:
+  - DDCookiePolicy
+selectors:
+  presence: div#CookiePolicy
+  acceptAll: a#CookiePolicyClose

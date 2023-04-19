@@ -1,0 +1,7 @@
+name: oi.dk
+cookieName: cookie-agreed
+selectors:
+  presence:
+    - div#sliding-popup > button.agree-button
+  acceptAll:
+    - button.agree-button

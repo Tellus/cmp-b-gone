@@ -1,0 +1,10 @@
+name: fyensstift.dk
+cookieName:
+  - cookieConsent
+selectors:
+  presence:
+    - div#cookieConsent
+  acceptAll:
+    - div#closeCookieConsentBox
+  rejectAll:
+    - div#closeCookieConsentBox

@@ -1,0 +1,10 @@
+name: esundhed.dk
+cookieName: cookieconsent_dismissed
+selectors:
+  presence:
+    - div.cc_banner-wrapper
+  acceptAll:
+    - a.cc_btn_accept_all
+  acceptDefault:
+    - a.cc_btn_accept_all
+  rejectAll: null

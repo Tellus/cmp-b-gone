@@ -1,0 +1,42 @@
+# These should be filled out by 'pnpm install'
+node_modules/
+
+# actual config files are deployment-specific. Use --write-default-config to get a new one
+config.json
+config.json5
+config.yaml
+
+# Env files are deployment-specific and should never be checked in.
+.env
+
+# Logs are deployment-specific, shouldn't be added to version control.
+*.log
+
+# Rebuilt by TS.
+dist
+src/src_dist
+
+# TypeDoc output
+docs
+
+# If present, made by run-rs to have a dev-only MongoDB instance.
+data
+
+*.tsbuildinfo
+
+# Ignore archives.
+.zip
+.7z
+.tgz
+.tar.gz
+
+.nyc_output
+
+# Dev-only caching of crawler queues.
+.cache
+
+playground.mongodb
+.ignored
+
+# Binaries downloaded by mongodb-memory-server
+mongod-*.4.*

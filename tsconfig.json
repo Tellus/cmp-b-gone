@@ -1,0 +1,28 @@
+{
+  "configName": "Consent Management Platform Management",
+  "extends": "@tsconfig/recommended",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": ".",
+    "rootDir": ".",
+    // "lib": ["ES2021", "DOM"],
+    "module": "commonjs",
+    "target": "ES2022",
+    "noImplicitAny": true,
+    // "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strictFunctionTypes": true,
+    "allowSyntheticDefaultImports": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": false,
+    // "importHelpers": true,
+    "types": [
+      "node",
+    ],
+  },
+  "include": [
+    "src/**/*.ts",
+  ],
+}

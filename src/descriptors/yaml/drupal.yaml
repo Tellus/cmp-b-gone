@@ -1,0 +1,14 @@
+name: Drupal(?)
+cookieName:
+  - cookie-agreed
+  - cookie-agreed-version
+  - cookie-agreed-categories
+selectors:
+  presence:
+    - div.eu-cookie-compliance-banner
+    - div.popup-banner__summary # So far only seen on odsherred.dk
+  acceptAll:
+    - button.agree-button
+    - .eucc-button__accept
+  rejectAll:
+    - .eu-cookie-compliance-only-required-button

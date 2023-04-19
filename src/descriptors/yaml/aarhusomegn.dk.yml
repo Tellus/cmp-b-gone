@@ -1,0 +1,17 @@
+# This is a god-awful descriptor, but the website isn't giving us much to work with.
+name: aarhusomegn.dk
+cookieName:
+  - Dynamicweb.CookieOptInLevel
+  - Dynamicweb.SessionVisitor
+selectors:
+  presence:
+    - div#cookieWarningDiv
+  acceptAll:
+    - a[onclick="return setOptInCookie(2);"]
+    - a:contains("Acceptér alle cookies")
+  acceptDefault:
+    - a[onclick="return setOptInCookie(1);"]
+    - a:contains("Acceptér kun funktionelle cookies")
+  rejectAll:
+    - a[onclick="return setOptInCookie(0);"]
+    - a:contains("Acceptér ikke cookies")

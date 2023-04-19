@@ -1,0 +1,11 @@
+name: brs.dk
+cookieName:
+  - cookiebanner
+selectors:
+  presence:
+    - section.cookiebanner
+  acceptAll:
+    - button.btn-cookie
+  acceptDefault: null
+  rejectAll:
+    - button.btn-necessaryCookie

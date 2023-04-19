@@ -1,0 +1,18 @@
+name: dfactoryplugins/cookie-notice
+cookieName:
+  - cookie_notice_accepted
+  # Seen on nabbolig.dk
+  - cookieNotice
+selectors:
+  presence:
+    - div#cookie-notice
+    - div.cookie-notice
+    - span#cn-notice-text
+  acceptAll:
+    - a#cn-accept-cookie
+    # Seen on nabbolig.dk
+    - a.accept-cookies
+    - span#cn-close-notice
+    - a[data-cookie-set="accept"]
+  rejectAll:
+    - a#cn-refuse-cookie

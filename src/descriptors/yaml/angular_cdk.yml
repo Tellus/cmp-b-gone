@@ -1,0 +1,17 @@
+# There aren't any good CSS selectors for the places we've seen this CMP yet.
+# So far it's basically looking for key text in the buttons. Meh.
+name: angular_cdk
+cookieName:
+  - cookieConsent
+selectors:
+  presence:
+    - div.cdk-overlay-container
+  acceptAll:
+    # Alternative 1
+    - button[cdkfocusinitial]
+    # Alternative 2
+    - button span:contains("Tillad alle cookies")
+  acceptDefault:
+    - button span:contains("Tillad valgte cookies")
+  rejectAll:
+    - button span:contains("Kun nødvendige cookies")

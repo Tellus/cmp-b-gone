@@ -1,0 +1,14 @@
+# I suspect this CMP covers most if not all sites under ringsted.dk
+name: ringsted_kommune
+cookieName: rk_cookie_accept
+selectors:
+  presence:
+    - div.rk_cookie_accept
+  acceptAll:
+    # The correct way of accepting all would actually be to select the checkboxes
+    # presented, but we don't have functionality for that, yet.
+    - button.rkca_button_reject
+  acceptDefault:
+    - button.rkca_button_accept
+  rejectAll:
+    - button.rkca_button_reject

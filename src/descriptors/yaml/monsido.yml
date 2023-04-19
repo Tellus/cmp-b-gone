@@ -1,0 +1,16 @@
+name: monsido
+cookieName: consentedCategories
+selectors:
+  presence:
+    - mon-cb-main
+    - div[aria-label="Monsido Cookie Banner"]
+    - .mon-cb-wrapper
+    - pierce/.mon-cb-wrapper
+  acceptAll:
+    - mon-cb-button[e2e-tag="acceptAllCookiesButton"]
+    - pierce/mon-cb-button[e2e-tag="acceptAllCookiesButton"]
+    - button span:contains("Tillad alle cookies")
+  acceptDefault:
+    - pierce/button[aria-label="Tillad kun nødvendige cookies"]
+  rejectAll:
+    - pierce/button[aria-label="Tillad kun nødvendige cookies"]

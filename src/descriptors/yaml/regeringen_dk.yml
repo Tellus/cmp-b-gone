@@ -1,0 +1,7 @@
+name: regeringen.dk
+cookieName: cookie-accept
+selectors:
+  presence: .cookie-info
+  acceptAll: .cookie-info__button button.accept
+  acceptDefault: null
+  rejectAll: .cookie-info__text .deny

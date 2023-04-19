@@ -1,0 +1,20 @@
+name: InCom
+cookieName:
+  - InComCookieConsent
+selectors:
+  presence:
+    - div.incom-cookie-module
+    - div#main-cookie-view
+    - pierce/div#main-cookie-view
+    - pierce/div.incom-cookie-module
+    - cookie-consent
+    - cookie-consent-element
+  acceptAll:
+    - button#cookie-accept-all
+    - button[aria-label="Accepter alle cookies"]
+    # Technically incorrect, but necessary in some specific cases until we get better descriptor support.
+    - pierce/button[aria-label="Accepter kun de nødvendige cookies"]
+    - pierce/button.btn.uppercase.btn-primary.bg-primary.text-white.btn-solid.items-center.rounded-full:first-of-type
+  rejectAll:
+    - button[aria-label="Accepter kun valgte cookies"]
+    - button span:contains("Afvis alle")

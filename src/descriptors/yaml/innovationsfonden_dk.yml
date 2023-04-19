@@ -1,0 +1,11 @@
+name: innovationsfonden.dk
+cookieName: cookie-settings
+selectors:
+  presence:
+    - div.cookie-settings
+  acceptAll:
+    - button.cookie-settings__submit
+  acceptDefault:
+    - button.cookie-settings__accept-all
+  rejectAll:
+    - button.cookie-settings__accept-all

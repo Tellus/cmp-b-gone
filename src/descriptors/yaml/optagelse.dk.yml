@@ -1,0 +1,9 @@
+name: optagelse.dk
+cookieName:
+  - civicShowCookieIcon
+  - civicAllowCookies
+selectors:
+  presence: div.ccc-content
+  acceptAll: a#cctoggle
+  acceptDefault: null
+  rejectAll: null

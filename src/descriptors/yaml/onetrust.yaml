@@ -1,0 +1,15 @@
+name: onetrust
+cookieName:
+  - OptanonAlertBoxClosed
+  - OptanonConsent
+selectors:
+  presence:
+    - div#onetrust-banner-sdk
+    - div#onetrust-consent-sdk
+    - div#onetrust-pc-sdk
+  acceptAll:
+    - button#onetrust-accept-btn-handler
+    - button#accept-recommended-btn-handler
+  acceptDefault:
+    - button.save-preference-btn-handler.onetrust-close-btn-handler
+  rejectAll: "button#onetrust-reject-all-handler"

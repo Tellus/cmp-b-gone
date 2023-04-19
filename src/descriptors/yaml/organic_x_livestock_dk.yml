@@ -1,0 +1,9 @@
+# Seen on organicxlivestock.dk
+name: organicxlivestock.dk
+cookieName:
+  - 26c9846880e0f906d3e3538abd84b491
+selectors:
+  presence:
+    - div#cookiebanner
+  acceptAll:
+    - div#cookiebanner button.close

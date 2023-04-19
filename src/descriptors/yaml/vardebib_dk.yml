@@ -1,0 +1,7 @@
+name: vardebib.dk
+cookieName: cookie-agreed-7083
+selectors:
+  presence: .popup-content.info
+  acceptAll: button.agree-button
+  acceptDefault: null
+  rejectAll: button.decline-button

@@ -1,0 +1,15 @@
+name: Complianz
+cookieName: cmplz_functional
+selectors:
+  presence:
+    - div.cmplz-cookiebanner
+    - div.cmplz-tcf-banner-hidden#cc-window
+  acceptAll:
+    - button.cmplz-accept
+    - a.cc-accept-all
+  acceptDefault:
+    - button.cmplz-deny
+    - a.cc-dismiss
+  rejectAll:
+    - button.cmplz-deny
+    - a.cc-dismiss
