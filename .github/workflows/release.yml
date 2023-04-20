@@ -83,13 +83,8 @@ jobs:
           run_install: true
       - name: Build
         run: pnpm build
-      - name: T1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: git ls-remote --heads https://x-access-token:$GITHUB_TOKEN@github.com/inqludeit/qualweb-plugin-cmp.git
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm semantic-release
