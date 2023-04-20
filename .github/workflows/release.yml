@@ -85,6 +85,9 @@ jobs:
         run: pnpm build
       - name: Release
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm semantic-release
+        run:
+          - echo Tokens
+          - echo $GITHUB_TOKEN
+          - pnpm semantic-release
