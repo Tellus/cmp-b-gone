@@ -1,4 +1,4 @@
-import { Page } from 'puppeteer';
+import type { Page } from 'puppeteer';
 import _ from 'lodash';
 import { guessCaller, Logger, toArray } from '../util';
 import { Cookie, LocalStorageData } from '../types';

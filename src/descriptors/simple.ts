@@ -1,5 +1,5 @@
 import { Logger } from '../util';
-import { Page } from 'puppeteer';
+import type { Page } from 'puppeteer';
 import { CMPDescriptor, CookieConsentStorageOptions, LocalStorageConsentStorageOptions } from './descriptor';
 
 export class SimpleCMPDescriptor extends CMPDescriptor {

@@ -1,7 +1,6 @@
 import 'mocha';
 import { expect, assert } from 'chai';
 import { YamlDescriptor } from '@src/descriptors/yaml';
-import puppeteer from 'puppeteer';
 import { fixturePath, readFixtureFile, startStaticServer, withBrowserPage, withStaticPage, withStaticServer } from './util';
 
 async function readBadYaml(): Promise<string> {

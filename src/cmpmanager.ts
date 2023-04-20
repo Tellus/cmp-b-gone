@@ -1,5 +1,5 @@
 import { Logger, guessCaller } from './util';
-import { Page } from 'puppeteer';
+import type { Page } from 'puppeteer';
 import * as Descriptors from './descriptors';
 import { globSync } from 'glob';
 import { DescriptorConsentData } from './types';

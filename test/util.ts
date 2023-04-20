@@ -1,7 +1,7 @@
 import path from 'path';
 import fsSync, { promises as fs } from 'fs';
-import puppeteer,
-  {
+import { launch } from 'puppeteer';
+import type {
     PuppeteerLaunchOptions,
     LaunchOptions,
     Browser,
@@ -19,7 +19,7 @@ import http from 'http';
  * @returns 
  */
 export async function launchBrowser(launchOpts?: LaunchOptions & BrowserLaunchArgumentOptions & BrowserConnectOptions): Promise<Browser> {
-  return await puppeteer.launch(buildLaunchOptions(launchOpts));
+  return await launch(buildLaunchOptions(launchOpts));
 }
 
 export function buildLaunchOptions(launchOpts?: LaunchOptions & BrowserLaunchArgumentOptions & BrowserConnectOptions): LaunchOptions & BrowserLaunchArgumentOptions & BrowserConnectOptions {
