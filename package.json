@@ -40,7 +40,7 @@
     "url": "git+ssh://git@github.com/inqludeit/qualweb-plugin-cmp.git"
   },
   "author": "Johannes L. Borresen <jlb@inqludeit.dk>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "cross-env": "^7.0.3",
     "glob": "^10.2.1",
