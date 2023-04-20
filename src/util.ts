@@ -5,11 +5,11 @@ try {
   winston = require('winston');
 
   if (Object.keys(winston.loggers.loggers).length === 0) {
-    console.warn('Winston present, but there does not seem to be any loggers configured.');
+    // console.warn('Winston present, but there does not seem to be any loggers configured.');
     winston = undefined;
   }
 } catch (_err: unknown) {
-  console.log('winston is not installed. No logging will happen.');
+  // console.log('winston is not installed. No logging will happen.');
 }
 
 type LoggerInstance = Pick<Logger, 'log'>;
