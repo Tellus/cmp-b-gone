@@ -1,7 +1,7 @@
 {
-  "name": "@inqludeit/cmp",
+  "name": "@inqludeit/qualweb-plugin-cmp",
   "version": "0.0.0-development",
-  "description": "Consent management platform... management.",
+  "description": "Library and QualWeb plugin to dismiss cookie banners.",
   "engines": {
     "node": ">=18.0.0"
   },
