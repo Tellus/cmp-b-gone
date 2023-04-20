@@ -33,7 +33,8 @@
     "build": "npx tsc --build -v",
     "build:force": "npx tsc --build -f -v",
     "clean": "npx tsc --build --clean && rimraf dist",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prepublish": "pnpm build"
   },
   "repository": {
     "type": "git",
