@@ -87,7 +87,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: echo token $GITHUB_TOKEN
+        run: git ls-remote --heads https://x-access-token:$GITHUB_TOKEN@github.com/inqludeit/qualweb-plugin-cmp.git
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
