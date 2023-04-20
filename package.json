@@ -56,8 +56,8 @@
     "@qualweb/types": "^0.7.21",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^9.0.2",
-    "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^10.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@tsconfig/recommended": "^1.0.2",
     "@types/chai": "^4.3.4",
@@ -69,10 +69,10 @@
     "chai": "^4.3.7",
     "http-server": "^14.1.1",
     "mocha": "^10.2.0",
+    "semantic-release": "^21.0.1",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.0.4",
-    "semantic-release": "^21.0.1"
+    "typescript": "^5.0.4"
   },
   "optionalDependencies": {
     "winston": "^3.8.2"

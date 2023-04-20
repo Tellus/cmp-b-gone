@@ -28,12 +28,6 @@ const semantic_release_config = {
       },
     ],
     [
-      "@semantic-release/exec",
-      {
-        "generateNotesCmd": "echo ${nextRelease.version} > RELEASE"
-      },
-    ],
-    [
       "@semantic-release/git",
       {
         "assets": [
@@ -42,6 +36,9 @@ const semantic_release_config = {
         ],
       },
     ],
+    [
+      "@semantic-release/npm",
+    ]
   ],
 };
 
