@@ -198,11 +198,11 @@ export class CMPManager {
 
     if (includeBuiltIn === true) {
       // Add complex/manually implemented descriptors.
-      await manager.addFrom(path.join(__dirname, 'descriptors/contrib/*.ts'));
+      await manager.addFrom(path.join(__dirname, '../descriptors/contrib/*.ts'));
   
       // Add YAML-defined simple descriptors.
-      await manager.addFrom(path.join(__dirname, 'descriptors/yaml/*.yaml'));
-      await manager.addFrom(path.join(__dirname, 'descriptors/yaml/*.yml'));
+      await manager.addFrom(path.join(__dirname, '../descriptors/yaml/*.yaml'));
+      await manager.addFrom(path.join(__dirname, '../descriptors/yaml/*.yml'));
     }
 
     return manager;
