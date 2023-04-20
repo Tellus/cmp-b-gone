@@ -3,7 +3,6 @@ import type { Logger } from 'winston';
 let winston: any;
 try {
   winston = require('winston');
-  console.debug(winston.config);
 
   if (Object.keys(winston.loggers.loggers).length === 0) {
     console.warn('Winston present, but there does not seem to be any loggers configured.');
