@@ -16,26 +16,11 @@ try {
 type LoggerInstance = Pick<Logger, 'log'>;
 
 const _Logger = winston || {
-  log(level: string, msg: string): void {
-    // Noop
-    console.log('noop');
-  },
-  info(msg: string): void {
-    // Noop
-    console.log('noop');
-  },
-  debug(msg: string): void {
-    // Noop
-    console.log('noop');
-  },
-  verbose(msg: string): void {
-    // Noop
-    console.log('noop');
-  },
-  warn(msg: string): void {
-    // Noop
-    console.log('noop');
-  },
+  log(level: string, msg: string): void {},
+  info(msg: string): void {},
+  debug(msg: string): void {},
+  verbose(msg: string): void {},
+  warn(msg: string): void {},
 }
 
 export { _Logger as Logger }
@@ -47,7 +32,7 @@ export { _Logger as Logger }
  */
 // eslint-disable-next-line @typescript-eslint/ban-types -- there is not better/narrower type definition.
 export function guessCaller(thisArg: Function): string {
-  // console.debug(`Trying to guess caller for "${thisArg.name}"`);
+  // Logger.debug(`Trying to guess caller for "${thisArg.name}"`);
   // Store current stack trace limit so it can be restored.
   const previousStacktraceLimit = Error.stackTraceLimit;
   const previousStackTracePreparer = Error.prepareStackTrace;
@@ -67,9 +52,9 @@ export function guessCaller(thisArg: Function): string {
 
   const stack = captureObject.stack;
 
-  // console.debug('----');
-  // console.debug(stack.map(s => `${s.getFileName()}, line ${s.getLineNumber()}, ${s.getFunctionName() || s.getFunction()?.name}`));
-  // console.debug('----');
+  // Logger.debug('----');
+  // Logger.debug(stack.map(s => `${s.getFileName()}, line ${s.getLineNumber()}, ${s.getFunctionName() || s.getFunction()?.name}`));
+  // Logger.debug('----');
 
   // Restore original stack trace limit.
   Error.stackTraceLimit = previousStacktraceLimit;
