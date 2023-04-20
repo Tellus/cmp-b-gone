@@ -388,6 +388,13 @@ export class CMPManager {
     } else throw new Error(`Invalid argument passed as descriptor ("${descriptor}", type: ${typeof descriptor})`);
   }
 
+  /**
+   * Tries to detect the CMP present on a page, and returns a descriptor for it
+   * if found.
+   * @param page The page to run detection on. The page must have loaded the
+   * target URL before calling this method.
+   * @returns The matching descriptor for the page, if found. Null otherwise.
+   */
   async detectCMP(page: Page): Promise<Descriptors.CMPDescriptor | null> {
     for (const descriptor of this.descriptors) {
       if (await descriptor.isCMPPresent(page))
