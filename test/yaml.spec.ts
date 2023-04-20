@@ -1,7 +1,15 @@
 import 'mocha';
 import { expect, assert } from 'chai';
 import { YamlDescriptor } from '@src/descriptors/yaml';
-import { fixturePath, readFixtureFile, startStaticServer, withBrowserPage, withStaticPage, withStaticServer } from './util';
+import {
+  fixturePath,
+  readFixtureFile,
+  withBrowserPage,
+  withStaticServer,
+} from './util';
+import {
+  Logger
+} from '../src/util';
 
 async function readBadYaml(): Promise<string> {
   return readFixtureFile('baddescriptor.yaml');
@@ -136,7 +144,7 @@ tests.forEach(v => {
   
       await withStaticServer(async (host) => {
         await withBrowserPage(async page => {
-          console.debug(`Address: ${host}`);
+          Logger.debug(`Address: ${host}`);
           await page.goto(`http://${host}/cookiesite.html`);
   
           expect(await desc.isCMPPresent(page)).to.be.true;
