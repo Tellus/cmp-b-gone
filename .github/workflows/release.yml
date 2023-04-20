@@ -26,6 +26,7 @@ jobs:
     
   test:
     name: Test
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -45,6 +46,7 @@ jobs:
 
   release:
     name: Release
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
