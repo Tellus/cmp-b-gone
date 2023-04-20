@@ -83,11 +83,13 @@ jobs:
           run_install: true
       - name: Build
         run: pnpm build
+      - name: T1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: echo token $GITHUB_TOKEN
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run:
-          - echo Tokens
-          - echo $GITHUB_TOKEN
-          - pnpm semantic-release
+        run: pnpm semantic-release
