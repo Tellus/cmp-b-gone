@@ -12,8 +12,6 @@ try {
   // console.log('winston is not installed. No logging will happen.');
 }
 
-type LoggerInstance = Pick<Logger, 'log'>;
-
 const _Logger = winston || {
   log(level: string, msg: string): void {},
   info(msg: string): void {},
