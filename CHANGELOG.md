@@ -1,5 +1,12 @@
 Changelog
 
+# [1.0.0-next.2](https://github.com/inqludeit/qualweb-plugin-cmp/compare/v1.0.0-next.1...v1.0.0-next.2) (2023-04-20)
+
+
+### Bug Fixes
+
+* a refactor hidden as a fix (ci test) ([67fe35e](https://github.com/inqludeit/qualweb-plugin-cmp/commit/67fe35e98275ae3b86e8a21e97b509b6e01da887))
+
 # 1.0.0-next.1 (2023-04-20)
 
 
