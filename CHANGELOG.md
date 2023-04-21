@@ -1,5 +1,12 @@
 Changelog
 
+## [1.0.2](https://github.com/tellus/qualweb-plugin-cmp/compare/v1.0.1...v1.0.2) (2023-04-21)
+
+
+### Bug Fixes
+
+* corrected name of README file ([ec34db7](https://github.com/tellus/qualweb-plugin-cmp/commit/ec34db7636356544bf2f6f0a75e720ad7c3db828))
+
 ## [1.0.1](https://github.com/tellus/qualweb-plugin-cmp/compare/v1.0.0...v1.0.1) (2023-04-21)
 
 
