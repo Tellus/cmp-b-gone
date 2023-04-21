@@ -66,8 +66,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
       - name: Cache files
         id: cache-all
         uses: actions/cache@v3
@@ -87,5 +85,5 @@ jobs:
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: pnpm semantic-release

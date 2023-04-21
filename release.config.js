@@ -26,15 +26,15 @@ const semantic_release_config = {
         "changelogTitle": "Changelog",
       },
     ],
-    [
-      "@semantic-release/git",
-      {
-        "assets": [
-          "CHANGELOG.md",
-          "RELEASE",
-        ],
-      },
-    ],
+    // [
+    //   "@semantic-release/git",
+    //   {
+    //     "assets": [
+    //       "CHANGELOG.md",
+    //       "RELEASE",
+    //     ],
+    //   },
+    // ],
     [
       "@semantic-release/npm",
     ]
