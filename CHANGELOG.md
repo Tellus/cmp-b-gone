@@ -1,5 +1,12 @@
 Changelog
 
+# [1.0.0-next.2](https://github.com/tellus/qualweb-plugin-cmp/compare/v1.0.0-next.1...v1.0.0-next.2) (2023-04-21)
+
+
+### Bug Fixes
+
+* pointless fix commit ([26202be](https://github.com/tellus/qualweb-plugin-cmp/commit/26202be0c829631fe7dcc69418ff27e8bc78590d))
+
 # 1.0.0-next.1 (2023-04-21)
 
 
