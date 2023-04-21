@@ -87,6 +87,5 @@ jobs:
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
-          GH_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
-        run: GH_TOKEN=$GITHUB_TOKEN pnpm semantic-release
+          GITHUB_TOKEN: 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
+        run: pnpm semantic-release
