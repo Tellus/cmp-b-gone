@@ -1,5 +1,12 @@
 Changelog
 
+## [1.0.1](https://github.com/tellus/qualweb-plugin-cmp/compare/v1.0.0...v1.0.1) (2023-04-21)
+
+
+### Bug Fixes
+
+* corrected import in example ([fe287a9](https://github.com/tellus/qualweb-plugin-cmp/commit/fe287a94ccbf383ece578328fba1702a5619d0d0))
+
 # 1.0.0 (2023-04-21)
 
 
