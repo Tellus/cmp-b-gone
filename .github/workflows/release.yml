@@ -64,7 +64,6 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ vars.UNSAFE_GH_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Checkout
@@ -88,4 +87,4 @@ jobs:
       - name: Build
         run: pnpm build
       - name: Release
-        run: unset GITHUB_TOKEN && pnpm semantic-release
+        run: pnpm semantic-release
