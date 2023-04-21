@@ -65,7 +65,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
+      GH_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
