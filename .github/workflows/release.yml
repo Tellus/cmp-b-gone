@@ -87,5 +87,5 @@ jobs:
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: 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
+          GH_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
         run: pnpm semantic-release
