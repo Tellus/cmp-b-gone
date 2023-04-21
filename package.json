@@ -38,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/inqludeit/qualweb-plugin-cmp.git"
+    "url": "github:tellus/qualweb-plugin-cmp.git"
   },
   "author": "Johannes L. Borresen <jlb@inqludeit.dk>",
   "license": "MIT",
