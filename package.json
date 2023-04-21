@@ -36,10 +36,6 @@
     "semantic-release": "semantic-release",
     "prepublish": "pnpm build"
   },
-  "repository": {
-    "type": "git",
-    "url": "github:tellus/qualweb-plugin-cmp.git"
-  },
   "author": "Johannes L. Borresen <jlb@inqludeit.dk>",
   "license": "MIT",
   "dependencies": {
@@ -81,5 +77,9 @@
   },
   "resolutions": {
     "puppeteer": "^19.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tellus/qualweb-plugin-cmp.git"
   }
 }
