@@ -6,7 +6,7 @@ on:
       - next
 
 env:
-  GITHUB_TOKEN: ${{ vars.UNSAFE_GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ vars.UNSAFE_GH_TOKEN }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
