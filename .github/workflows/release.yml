@@ -89,4 +89,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
           GH_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
-        run: pnpm semantic-release
+        run: GH_TOKEN=$GITHUB_TOKEN pnpm semantic-release
