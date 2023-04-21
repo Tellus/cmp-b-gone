@@ -5,10 +5,6 @@ on:
       - master
       - next
 
-env:
-  GITHUB_TOKEN: ${{ vars.UNSAFE_GH_TOKEN }}
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
 jobs:
   build:
     name: Build
@@ -67,6 +63,9 @@ jobs:
     name: Release
     needs: test
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ vars.UNSAFE_GH_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -89,4 +88,4 @@ jobs:
       - name: Build
         run: pnpm build
       - name: Release
-        run: pnpm semantic-release
+        run: unset GITHUB_TOKEN && pnpm semantic-release
