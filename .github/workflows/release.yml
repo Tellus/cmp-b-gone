@@ -4,6 +4,11 @@ on:
     branches:
       - master
       - next
+
+env:
+  GITHUB_TOKEN: ${{ vars.UNSAFE_GITHUB_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   build:
     name: Build
@@ -84,7 +89,4 @@ jobs:
       - name: Build
         run: pnpm build
       - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm semantic-release
