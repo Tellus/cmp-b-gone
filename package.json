@@ -1,10 +1,11 @@
 {
-  "name": "@inqludeit/cmp",
+  "name": "@inqludeit/qualweb-plugin-cmp",
   "version": "0.0.0-development",
-  "description": "Consent management platform... management.",
+  "description": "Library and QualWeb plugin to dismiss cookie banners.",
   "engines": {
     "node": ">=18.0.0"
   },
+  "packageManager": "pnpm@8.3.1",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
   "directories": {
@@ -32,22 +33,18 @@
     "build": "npx tsc --build -v",
     "build:force": "npx tsc --build -f -v",
     "clean": "npx tsc --build --clean && rimraf dist",
-    "semantic-release": "semantic-release"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/inqludeit/qualweb-plugin-cmp.git"
+    "semantic-release": "semantic-release",
+    "prepublish": "pnpm build"
   },
   "author": "Johannes L. Borresen <jlb@inqludeit.dk>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "cross-env": "^7.0.3",
     "glob": "^10.2.1",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
-    "puppeteer": "^19.9.1",
     "rimraf": "^5.0.0",
-    "semantic-release": "^19.0.5",
+    "semantic-release": "^21.0.1",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
@@ -69,6 +66,7 @@
     "chai": "^4.3.7",
     "http-server": "^14.1.1",
     "mocha": "^10.2.0",
+    "puppeteer": "^19.10.1",
     "semantic-release": "^21.0.1",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
@@ -78,6 +76,10 @@
     "winston": "^3.8.2"
   },
   "resolutions": {
-    "puppeteer": "^19.9.1"
+    "puppeteer": "^19.10.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tellus/qualweb-plugin-cmp.git"
   }
 }

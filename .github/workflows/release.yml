@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+      - next
+
+permissions: write-all
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "19"
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          run_install: true
+      - name: Build
+        run: pnpm build
+      - name: Test
+        run: pnpm test
+      - name: Release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
+        run: pnpm semantic-release

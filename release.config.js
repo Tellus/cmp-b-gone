@@ -1,5 +1,4 @@
 const semantic_release_config = {
-  "repositoryUrl": "https://github.com/inqludeit/qualweb-plugin-cmp.git",
   "branches": [
     "main",
     {
