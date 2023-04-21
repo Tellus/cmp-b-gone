@@ -1,5 +1,5 @@
 import type { QualwebPlugin } from '@qualweb/core';
-import { CMPManager, DescriptorConsentData } from '@inqludeit/cmp';
+import { CMPManager, DescriptorConsentData } from '@inqludeit/qualweb-plugin-cmp';
 
 export async function createCachingPlugin(): Promise<QualwebPlugin> {
   // Initialise the manager with default/built-in descriptors.
