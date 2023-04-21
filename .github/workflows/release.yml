@@ -5,47 +5,15 @@ on:
       - master
       - next
 
+permissions: write-all
+
 jobs:
-  build:
-    name: Build
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Cache files
-        id: cache-all
-        uses: actions/cache@v3
-        with:
-          path: .
-          key: ${{ runner.os }}-cache-all
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "19"
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.2.4
-        with:
-          run_install: true
-      - name: Build
-        run: pnpm build
-    
-  test:
-    name: Test
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Cache files
-        id: cache-all
-        uses: actions/cache@v3
-        with:
-          path: .
-          key: ${{ runner.os }}-cache-all
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -58,32 +26,8 @@ jobs:
         run: pnpm build
       - name: Test
         run: pnpm test
-
-  release:
-    name: Release
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Cache files
-        id: cache-all
-        uses: actions/cache@v3
-        with:
-          path: .
-          key: ${{ runner.os }}-cache-all
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "19"
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.2.4
-        with:
-          run_install: true
-      - name: Build
-        run: pnpm build
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
         run: pnpm semantic-release
