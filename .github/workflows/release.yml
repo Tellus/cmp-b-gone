@@ -18,7 +18,7 @@ jobs:
     needs: unit_tests
     steps:
       - name: Setup (cache, dependencies)
-        uses: ./.github/actions/install_and_cache_dependencies.yml
+        uses: ./.github/actions/install_and_cache_dependencies
 
       - name: Build
         run: pnpm build
