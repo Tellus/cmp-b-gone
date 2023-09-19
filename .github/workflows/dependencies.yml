@@ -1,25 +1,14 @@
-name: Release stable
+name: Install/cache dependencies
 on:
-  push:
-    branches:
-      - main
-      - next
-
-permissions: write-all
+  workflow_call:
+    inputs:
+      unused:
+        type: boolean
+        description: Unused, but you must define something to use workflow_call.
 
 jobs:
-  deps:
-    name: Dependencies
-    uses: ./.github/workflows/dependencies.yml
-
-  unit_tests:
-    name: Unit tests
-    uses: ./.github/workflows/unit_tests.yml
-  
-  release:
-    name: Release
+  test:
     runs-on: ubuntu-latest
-    needs: unit_tests
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,11 +38,3 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
-      - name: Build
-        run: pnpm build
-      # - name: Release
-      #   env:
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #     GITHUB_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
-      #   run: pnpm semantic-release
