@@ -34,7 +34,7 @@
     "build": "npx tsc --build -v",
     "build:force": "npx tsc --build -f -v",
     "clean": "npx tsc --build --clean && rimraf dist",
-    "semantic-release": "semantic-release",
+    "release": "pnpm build && pnpm changeset publish",
     "prepublish": "pnpm build"
   },
   "author": "Johannes L. Borresen <jlb@inqludeit.dk>",
