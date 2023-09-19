@@ -7,7 +7,7 @@ on:
         description: Unused, but you must define something to use workflow_call.
 
 jobs:
-  test:
+  install_and_cache_dependencies:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
