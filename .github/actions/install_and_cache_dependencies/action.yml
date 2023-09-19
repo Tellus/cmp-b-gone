@@ -29,4 +29,5 @@ runs:
 
     # Re-run dependency installation in case of cache misses.
     - name: Install dependencies
+      shell: bash
       run: pnpm install
