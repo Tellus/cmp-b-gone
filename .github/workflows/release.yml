@@ -40,7 +40,10 @@ jobs:
       # Snapshot releases don't need the changeset action to put together PRs.
       - name: Create snapshot release
         if: github.ref_name == 'next'
-        run: pnpm release-snapshot
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm build && pnpm changeset version --snapshot next && pnpm changeset publish --tag next
           
       # - name: Release
       #   env:
