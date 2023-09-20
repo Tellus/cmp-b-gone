@@ -43,7 +43,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm build && pnpm changeset version --snapshot next && pnpm changeset publish --tag next
+        run: pnpm build && pnpm changeset version --snapshot next && pnpm changeset publish --tag next --otp ${{ secrets.NPM_TOKEN }}
           
       # - name: Release
       #   env:
