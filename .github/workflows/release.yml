@@ -1,4 +1,4 @@
-name: Release stable
+name: Release
 on:
   push:
     branches:
