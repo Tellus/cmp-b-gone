@@ -35,3 +35,6 @@ playground.mongodb
 
 # Binaries downloaded by mongodb-memory-server
 mongod-*.4.*
+
+# NEVER commit private stuff like this.
+.npmrc
