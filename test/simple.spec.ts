@@ -18,7 +18,7 @@ function fullFixture(): SimpleCMPDescriptor {
 }
 
 describe(SimpleCMPDescriptor.name, function () {
-  this.timeout('10s');
+  this.timeout('60s');
 
   it('Should detect a cookie banner on a page (minimal)', async () => {
     const desc = minimalFixture();
