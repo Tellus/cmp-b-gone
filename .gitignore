@@ -1,11 +1,6 @@
 # These should be filled out by 'pnpm install'
 node_modules/
 
-# actual config files are deployment-specific. Use --write-default-config to get a new one
-config.json
-config.json5
-config.yaml
-
 # Env files are deployment-specific and should never be checked in.
 .env
 
@@ -40,3 +35,6 @@ playground.mongodb
 
 # Binaries downloaded by mongodb-memory-server
 mongod-*.4.*
+
+# NEVER commit private stuff like this.
+.npmrc
