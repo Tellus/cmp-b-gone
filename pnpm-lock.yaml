@@ -82,6 +82,9 @@ devDependencies:
   chai:
     specifier: ^4.3.7
     version: 4.3.7
+  commander:
+    specifier: ^11.1.0
+    version: 11.1.0
   http-server:
     specifier: ^14.1.1
     version: 14.1.1
@@ -1725,6 +1728,11 @@ packages:
   /colors@1.4.0:
     resolution: {integrity: sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==}
     engines: {node: '>=0.1.90'}
+    dev: true
+
+  /commander@11.1.0:
+    resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
+    engines: {node: '>=16'}
     dev: true
 
   /commondir@1.0.1:
