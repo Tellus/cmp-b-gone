@@ -1,6 +1,7 @@
 import type { Page } from 'puppeteer';
 import _ from 'lodash';
-import { guessCaller, Logger, toArray } from '../util';
+import { guessCaller, toArray } from '../util';
+import { consola } from 'consola';
 import { Cookie, LocalStorageData } from '../types';
 
 /**
@@ -148,7 +149,7 @@ export abstract class CMPDescriptor {
       if (failOnMissing === true && toReturn.length !== storageOptions.length) {
         const msg = `Page cookie data is missing ${storageOptions.length - toReturn.length} expected cookies (expected ${storageOptions.join(', ')}, found ${cookies.map(c => c.name).join(', ')}).`;
 
-        Logger.error(tag, msg, {
+        consola.error(tag, msg, {
           allCookies: cookies.map(c => c.name),
           expectedCookies: storageOptions,
           missingCookies: storageOptions.filter(c => storageOptions.includes(c) === false),

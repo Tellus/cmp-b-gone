@@ -7,9 +7,7 @@ import {
   withBrowserPage,
   withStaticServer,
 } from './util';
-import {
-  Logger
-} from '../src/util';
+import { consola } from 'consola';
 
 async function readBadYaml(): Promise<string> {
   return readFixtureFile('baddescriptor.yaml');
@@ -144,7 +142,7 @@ tests.forEach(v => {
   
       await withStaticServer(async (host) => {
         await withBrowserPage(async page => {
-          Logger.debug(`Address: ${host}`);
+          consola.debug(`Address: ${host}`);
           await page.goto(`http://${host}/cookiesite.html`);
   
           expect(await desc.isCMPPresent(page)).to.be.true;

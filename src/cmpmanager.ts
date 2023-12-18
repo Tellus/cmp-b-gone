@@ -1,4 +1,5 @@
-import { Logger, guessCaller } from './util';
+import { consola } from 'consola';
+import { guessCaller } from './util';
 import type { Page } from 'puppeteer';
 import * as Descriptors from './descriptors';
 import { globSync } from 'glob';
@@ -89,27 +90,27 @@ export class CMPManager {
     if (Array.isArray(source) === false && typeof source === 'string') {
       // Single file/glob. Import.
 
-      Logger.verbose(this.tag, `Adding descriptor(s) from source "${source}"`);
+      consola.verbose(this.tag, `Adding descriptor(s) from source "${source}"`);
 
       await this.addFrom(source);
     } else if (source.length > 0) {
       if (typeof source[0] === 'string') {
         // Multiple files/globs. import.
 
-        Logger.verbose(this.tag, `Adding descriptors from ${source.length} sources.`, { sources: source });
+        consola.verbose(this.tag, `Adding descriptors from ${source.length} sources.`, { sources: source });
 
         await this.addFrom(source as string[]);
       } else {
         // Multiple descriptor objects.
         const sources = source as Descriptors.CMPDescriptor[];
 
-        Logger.verbose(this.tag, `Adding ${source.length} descriptors.`, { sources: sources.map(source => source.name) });
+        consola.verbose(this.tag, `Adding ${source.length} descriptors.`, { sources: sources.map(source => source.name) });
 
         this.descriptors.push(... sources);
       }
     }
 
-    Logger.verbose(this.tag, `Manager now knows ${this.descriptorNames.length} descriptors.`);
+    consola.verbose(this.tag, `Manager now knows ${this.descriptorNames.length} descriptors.`);
 
     return this;
   }
@@ -130,7 +131,7 @@ export class CMPManager {
       return YamlDescriptor.createFromPath(importPath, 'utf-8');
     } else {
       if (['.ts', '.js'].includes(extension) === false) {
-        Logger.warn(this.tag, `Unknown file extension "${extension}". Attempting to import as module.`, {
+        consola.warn(this.tag, `Unknown file extension "${extension}". Attempting to import as module.`, {
           file: importPath,
         });
       }
@@ -144,11 +145,11 @@ export class CMPManager {
           return newDescriptor;
         } else {
           const msg = `Failed to import from "${importPath}".`;
-          Logger.error(this.tag, msg);
+          consola.error(this.tag, msg);
           return null;
         }
       } catch (_err: unknown) {
-        Logger.error(this.tag, `Failed to add descriptor from path "${importPath}"`, { err: _err });
+        consola.error(this.tag, `Failed to add descriptor from path "${importPath}"`, { err: _err });
   
         return null;
       }
@@ -174,7 +175,7 @@ export class CMPManager {
 
     this.descriptors.push(...newDescriptors);
 
-    Logger.verbose(this.tag, `Added from ${path.length} descriptors.`, { paths: path });
+    consola.verbose(this.tag, `Added from ${path.length} descriptors.`, { paths: path });
 
     return this;
   }
@@ -254,13 +255,13 @@ export class CMPManager {
     try {
       detectedDescriptor = (await Promise.any(descPromises)) as Descriptors.CMPDescriptor;
     } catch (_err: unknown) {
-      Logger.warn(this.tag, `No CMP handlers matched for "${page.url()}". This might not be an error.`, {
+      consola.warn(this.tag, `No CMP handlers matched for "${page.url()}". This might not be an error.`, {
         url: page.url(),
       });
       return null;
     }
 
-    Logger.verbose(tag, `Detected descriptor "${detectedDescriptor.name}" on page`, {
+    consola.verbose(tag, `Detected descriptor "${detectedDescriptor.name}" on page`, {
       url: page.url(),
       detectedDescriptor,
     });
@@ -288,7 +289,7 @@ export class CMPManager {
     }
 
     if (!cookies.find(c => detectedDescriptor.consentKeys.includes(c.name))) {
-      Logger.warn(tag, `Failed to detect CMP data for positive descriptor ${detectedDescriptor.name}`, {
+      consola.warn(tag, `Failed to detect CMP data for positive descriptor ${detectedDescriptor.name}`, {
         expectedCookies: detectedDescriptor.consentKeys,
         presentCookies: cookies.map(c => c.name),
       });
@@ -323,7 +324,7 @@ export class CMPManager {
         return localStorageValues;
       });
     } catch (_err: unknown) {
-      Logger.error(tag, `Failed to query localStorage!`, {
+      consola.error(tag, `Failed to query localStorage!`, {
         err: _err as Error,
       });
     }
@@ -337,7 +338,7 @@ export class CMPManager {
     // try {
     //   consentData = await descriptor.getConsentData(page, options?.failOnMissing == true);
     // } catch (_err:unknown) {
-    //   Logger.info(tag, `Failed to retrieve consent data. Backing off and trying again.`, {
+    //   consola.info(tag, `Failed to retrieve consent data. Backing off and trying again.`, {
     //     error: _err,
     //   });
 

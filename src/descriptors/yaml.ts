@@ -1,7 +1,8 @@
 import fsSync from 'fs';
 import { promises as fs } from 'fs';
 import yaml from 'js-yaml';
-import { Logger, toArray } from '../util';
+import { toArray } from '../util';
+import { consola } from 'consola';
 // Import directly from the source file, not the index. Doing otherwise might
 // cause TypeErrors because of load order.
 import { SimpleCMPDescriptor } from './simple';
@@ -90,7 +91,7 @@ export class YamlDescriptor extends SimpleCMPDescriptor {
     const cmpData = yaml.load(fileContents, {
       filename: path,
       onWarning(e) {
-        Logger.error(YamlDescriptor.name, `Failed to load CMP descriptor from file "${path}".`, {
+        consola.error(YamlDescriptor.name, `Failed to load CMP descriptor from file "${path}".`, {
           err: e,
         });
       },
@@ -105,7 +106,7 @@ export class YamlDescriptor extends SimpleCMPDescriptor {
     const cmpData = yaml.load(fileContents, {
       filename: path,
       onWarning(e) {
-        Logger.error(YamlDescriptor.name, `Failed to load CMP descriptor from file "${path}".`, {
+        consola.error(YamlDescriptor.name, `Failed to load CMP descriptor from file "${path}".`, {
           err: e,
         });
       },

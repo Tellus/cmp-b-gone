@@ -1,7 +1,8 @@
 {
   "configName": "Consent Management Platform Management (unit tests)",
-  "extends": "./tsconfig.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": "../",
     "paths": {
       "@src/*": [ "src/*" ],
       "@src": [ "src" ],

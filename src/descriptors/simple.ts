@@ -1,4 +1,4 @@
-import { Logger } from '../util';
+import { consola } from 'consola';
 import type { Page } from 'puppeteer';
 import { CMPDescriptor, CookieConsentStorageOptions, LocalStorageConsentStorageOptions } from './descriptor';
 
@@ -32,7 +32,7 @@ export class SimpleCMPDescriptor extends CMPDescriptor {
 
           const errmsg = 'Failed to find and click acceptDefault input element.';
           
-          Logger.error(tag, errmsg, {
+          consola.error(tag, errmsg, {
             acceptDefaultSelectors,
           });
 
@@ -63,7 +63,7 @@ export class SimpleCMPDescriptor extends CMPDescriptor {
       }
 
       const msg = `Failed to click on rejection element.`;
-      Logger.error(tag, msg, {
+      consola.error(tag, msg, {
         selectorsTested: this.rejectAllSelectors,
       });
 
@@ -92,7 +92,7 @@ export class SimpleCMPDescriptor extends CMPDescriptor {
       }
 
       const msg = `Failed to click on rejection element.`;
-      Logger.error(tag, msg, {
+      consola.error(tag, msg, {
         selectorsTested: this.acceptDefaultSelectors,
       });
 
@@ -139,7 +139,7 @@ export class SimpleCMPDescriptor extends CMPDescriptor {
 
         // Early bailout.
         if (el === null) {
-          Logger.verbose(tag, `No elements for selector "${selector}" found.`, {
+          consola.verbose(tag, `No elements for selector "${selector}" found.`, {
             selector,
           });
 
@@ -155,27 +155,27 @@ export class SimpleCMPDescriptor extends CMPDescriptor {
 
         try {
           const requestHandler = (ev: any) => {
-            Logger.verbose(tag, 'Request!', {
+            consola.verbose(tag, 'Request!', {
               event: ev,
             });
             if (ev.isNavigationRequest()) {
-              Logger.warn(tag, 'A navigation request was initiated! This may cause the CMP manager to crash!');
+              consola.warn(tag, 'A navigation request was initiated! This may cause the CMP manager to crash!');
             }
           };
 
           page.on('request', requestHandler);
 
-          Logger.verbose(tag, `Trying to click element`, {
+          consola.verbose(tag, `Trying to click element`, {
             selector,
           });
 
           await el.click();
 
-          Logger.verbose(tag, 'Click complete!');
+          consola.verbose(tag, 'Click complete!');
 
           page.off('request', requestHandler);
 
-          Logger.verbose(tag, `Waiting for ${this.cmpTimeout} timeout after accepting all cookies.`);
+          consola.verbose(tag, `Waiting for ${this.cmpTimeout} timeout after accepting all cookies.`);
 
           // Allow javascript to run cookie storage.
           // await page.waitForFunction(() => {
@@ -186,16 +186,16 @@ export class SimpleCMPDescriptor extends CMPDescriptor {
           // should prevent exceptions caused by page navigation.
           await new Promise(r => setTimeout(r, this.cmpTimeout));
 
-          Logger.verbose(tag, 'Waiting for timeout DONE! Returning page to caller');
+          consola.verbose(tag, 'Waiting for timeout DONE! Returning page to caller');
 
           return page;
         } catch (_err: unknown) {
           const err = _err as Error;
-          Logger.verbose(tag, `Failed to perform Puppeteer click on ${selector}`, { err });
+          consola.verbose(tag, `Failed to perform Puppeteer click on ${selector}`, { err });
         }
 
         try {
-          Logger.verbose(tag, `Trying to click element via JavaScript`, {
+          consola.verbose(tag, `Trying to click element via JavaScript`, {
             selector,
           });
 
@@ -213,7 +213,7 @@ export class SimpleCMPDescriptor extends CMPDescriptor {
           return page;
         } catch (_err: unknown) {
           const err = _err as Error;
-          Logger.verbose(tag, `Failed to perform Puppeteer click on ${selector}`, { err });
+          consola.verbose(tag, `Failed to perform Puppeteer click on ${selector}`, { err });
           throw _err;
         }
       }
@@ -223,7 +223,7 @@ export class SimpleCMPDescriptor extends CMPDescriptor {
     }
 
     const msg = `Failed to find and/or click any elements for acceptAll.`;
-    Logger.error(tag, msg, { acceptAllSelectors: this.acceptAllSelectors });
+    consola.error(tag, msg, { acceptAllSelectors: this.acceptAllSelectors });
     throw new Error(msg);
   }
 
@@ -249,7 +249,7 @@ export class SimpleCMPDescriptor extends CMPDescriptor {
           const bbox = await el?.boundingBox();
 
           if (bbox) {
-            Logger.info(tag, `Bounding box detected.`, {
+            consola.info(tag, `Bounding box detected.`, {
               boundingBox: bbox,
             });
             return true;
