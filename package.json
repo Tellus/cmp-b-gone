@@ -28,7 +28,7 @@
   "scripts": {
     "pretest": "pnpm build",
     "test": "pnpm test:unit",
-    "test:unit": "cross-env TS_NODE_PROJECT=tsconfig.test.json mocha",
+    "test:unit": "cross-env TS_NODE_PROJECT=test/tsconfig.json mocha",
     "test:coverage": "nyc mocha",
     "ts-run": "node -r ts-node/register",
     "build": "npx tsc --build -v",
