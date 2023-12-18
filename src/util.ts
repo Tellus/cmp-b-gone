@@ -1,3 +1,8 @@
+import { consola } from 'consola';
+
+// Silence logging by default.
+consola.level = -999;
+
 /**
  * Attempts to guess the caller of a function by going through a local stack
  * trace.
