@@ -1,5 +1,15 @@
 Changelog
 
+## 1.1.0
+
+### Minor Changes
+
+- 1570506: Switch to `consola` from `winston`
+
+### Patch Changes
+
+- 8ecd7ae: Moved tsconfig.test.json to test/tsconfig.json (improves IDE support)
+
 ## 1.0.4
 
 ### Patch Changes
