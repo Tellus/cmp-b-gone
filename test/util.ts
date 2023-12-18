@@ -10,7 +10,7 @@ import type {
     BrowserConnectOptions,
   } from 'puppeteer';
 import http from 'http';
-import { Logger } from '../src/util';
+import { consola } from 'consola';
 
 /**
  * Wrapper around puppeteer.launch() that tries to detect the browser to use, in
@@ -103,7 +103,7 @@ export async function startStaticServer(cb?: (server: http.Server) => unknown, p
   });
   
   server.listen(port, async () => {
-    Logger.debug('Static server is up');
+    consola.debug('Static server is up');
     // Server started.
     if (cb) await cb(server);
   });
@@ -126,7 +126,7 @@ export async function withStaticServer(cb: (host: string, server: http.Server) =
 
   return new Promise((resolve, reject) => {
     server.listen(() => {
-      Logger.debug('Static server is up');
+      consola.debug('Static server is up');
 
       const addr = server.address();
       if (addr === null)
@@ -171,7 +171,7 @@ export async function withStaticPage(filePath: string, cb: (page:Page) => Promis
         server.listen(port);
         foundPort = true;
       } catch (err: unknown) {
-        Logger.debug(`Port ${port} taken. Trying next one up.`);
+        consola.debug(`Port ${port} taken. Trying next one up.`);
         port++;
       }
     }

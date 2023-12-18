@@ -7,14 +7,14 @@ import * as glob from 'glob';
 import * as path from 'node:path';
 import { promises as fs } from 'node:fs';
 import { load } from 'js-yaml';
-import { Logger } from '../src/util';
+import { consola } from 'consola';
 
 async function main(): Promise<void> {
   const sourcePath = path.resolve('src', 'descriptors', 'yaml', '*.@(yaml|yml)');
 
   const yamlDescriptorFiles = glob.sync(sourcePath);
 
-  Logger.debug(`Parsing ${yamlDescriptorFiles.length} YAML descriptors in ${sourcePath}.`);
+  consola.debug(`Parsing ${yamlDescriptorFiles.length} YAML descriptors in ${sourcePath}.`);
 
   const presenceSelectors: Map<string, string[]> = new Map();
 
@@ -28,7 +28,7 @@ async function main(): Promise<void> {
     } else if (typeof (descriptor.selectors?.presence) === 'string') {
       presenceField = [ descriptor.selectors.presence ];
     } else {
-      Logger.warn(`NO presence selectors in ${yamlDescriptorFile}!`);
+      consola.warn(`NO presence selectors in ${yamlDescriptorFile}!`);
       continue;
     }
 
@@ -40,11 +40,11 @@ async function main(): Promise<void> {
       const existing = presenceSelectors.get(presenceSelector);
 
       if (existing !== undefined) {
-        // Logger.error(`Selector ${presenceSelector} already exists! (duplicate was encountered in ${yamlDescriptorFile})`);
+        // consola.error(`Selector ${presenceSelector} already exists! (duplicate was encountered in ${yamlDescriptorFile})`);
         existing.push(yamlDescriptorFile);
         presenceSelectors.set(presenceSelector, existing);
       } else {
-        // Logger.info(`Selector ${presenceSelector} is unique (so far).`);
+        // consola.info(`Selector ${presenceSelector} is unique (so far).`);
         presenceSelectors.set(presenceSelector, [
           yamlDescriptorFile,
         ]);
@@ -54,8 +54,8 @@ async function main(): Promise<void> {
 
   for (const e of presenceSelectors.entries()) {
     if (e[1].length > 1) {
-      Logger.debug(`${e[0]} (${e[1].length}):`);
-      e[1].forEach(e => Logger.debug(e));
+      consola.debug(`${e[0]} (${e[1].length}):`);
+      e[1].forEach(e => consola.debug(e));
     }
   }
 }

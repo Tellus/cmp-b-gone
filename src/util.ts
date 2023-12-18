@@ -1,27 +1,3 @@
-import type { Logger } from 'winston';
-
-let winston: any;
-try {
-  winston = require('winston');
-
-  if (Object.keys(winston.loggers.loggers).length === 0) {
-    // console.warn('Winston present, but there does not seem to be any loggers configured.');
-    winston = undefined;
-  }
-} catch (_err: unknown) {
-  // console.log('winston is not installed. No logging will happen.');
-}
-
-const _Logger = winston || {
-  log(level: string, msg: string): void {},
-  info(msg: string): void {},
-  debug(msg: string): void {},
-  verbose(msg: string): void {},
-  warn(msg: string): void {},
-}
-
-export { _Logger as Logger }
-
 /**
  * Attempts to guess the caller of a function by going through a local stack
  * trace.
@@ -29,7 +5,7 @@ export { _Logger as Logger }
  */
 // eslint-disable-next-line @typescript-eslint/ban-types -- there is not better/narrower type definition.
 export function guessCaller(thisArg: Function): string {
-  // Logger.debug(`Trying to guess caller for "${thisArg.name}"`);
+  // consola.debug(`Trying to guess caller for "${thisArg.name}"`);
   // Store current stack trace limit so it can be restored.
   const previousStacktraceLimit = Error.stackTraceLimit;
   const previousStackTracePreparer = Error.prepareStackTrace;
@@ -49,9 +25,9 @@ export function guessCaller(thisArg: Function): string {
 
   const stack = captureObject.stack;
 
-  // Logger.debug('----');
-  // Logger.debug(stack.map(s => `${s.getFileName()}, line ${s.getLineNumber()}, ${s.getFunctionName() || s.getFunction()?.name}`));
-  // Logger.debug('----');
+  // consola.debug('----');
+  // consola.debug(stack.map(s => `${s.getFileName()}, line ${s.getLineNumber()}, ${s.getFunctionName() || s.getFunction()?.name}`));
+  // consola.debug('----');
 
   // Restore original stack trace limit.
   Error.stackTraceLimit = previousStacktraceLimit;
