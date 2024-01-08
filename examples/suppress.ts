@@ -1,5 +1,5 @@
 import type { QualwebPlugin } from '@qualweb/core';
-import { Protocol } from 'puppeteer';
+import type { Protocol } from 'puppeteer';
 
 export function createSuppressingPlugin(): QualwebPlugin {
   // Assume this has been filled previously, in a manner similar to the previous example.

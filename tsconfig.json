@@ -1,6 +1,5 @@
 {
   "configName": "Consent Management Platform Management",
-  "extends": "@tsconfig/recommended",
   "compilerOptions": {
     "outDir": "dist",
     "baseUrl": ".",
@@ -8,6 +7,10 @@
     // "lib": ["ES2021", "DOM"],
     "module": "commonjs",
     "target": "ES2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "composite": true,
     "noImplicitAny": true,
     // "skipLibCheck": true,
@@ -19,9 +22,6 @@
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
     // "importHelpers": true,
-    "types": [
-      "node",
-    ],
   },
   "include": [
     "src",
