@@ -9,8 +9,8 @@ overrides:
 
 dependencies:
   '@qualweb/core':
-    specifier: ^0.7.33
-    version: 0.7.33(typescript@5.3.3)
+    specifier: ^0.7.53
+    version: 0.7.53(typescript@5.3.3)
   consola:
     specifier: ^3.2.3
     version: 3.2.3
@@ -673,23 +673,23 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@qualweb/act-rules@0.6.11:
-    resolution: {integrity: sha512-00eSXN5ZUvdBxkCOYYrYBlCsQMwHM3SdalaXrCPoqs5FTSaA3dEtGA9FJjZgDH4XZbfU9NuNCL36X+09pdzDQQ==}
+  /@qualweb/act-rules@0.6.22:
+    resolution: {integrity: sha512-TayIYWr62vcylOjVK1Nhm60sfGE/r1rwh7MBxlaftg//iIIcjuGg9kz4qCj9zmr0WxlH5Xt9p1NxdTnmuzH8Tw==}
     dev: false
 
-  /@qualweb/best-practices@0.6.7:
-    resolution: {integrity: sha512-iMuuQUlO1oA5dKhIuH8+4h1sR3cFZjswY4/OgTuQ62VPhlxmJfLFlQwktJ2+uosVXzF98Szvvr9esLjhtu02wA==}
+  /@qualweb/best-practices@0.6.14:
+    resolution: {integrity: sha512-K/tiDZN94uPlWKInAWF68hHUePN657XuZrqtC18ySMo8n+w16dIbILs2VhKvgP6O9Eukg4Q0rTHKqwlL+/UKtQ==}
     dev: false
 
-  /@qualweb/core@0.7.33(typescript@5.3.3):
-    resolution: {integrity: sha512-dPeh9EldPZEmw8Ahigh6sD6MjD/LMc4ltaHlWY2bGzrnSkfo/Me87/nP5pfyC08ECaMNSDqLPMqkACfaIBQRIQ==}
+  /@qualweb/core@0.7.53(typescript@5.3.3):
+    resolution: {integrity: sha512-nuP4k/4Ib934Qv2bxNs88N9mtUs4u1g/NXI69A5UHXJLhCiK6gMg9ey/pnI/DKEsgtqG097Lw/zusFrs4pvrjw==}
     engines: {node: '>=12.0.0'}
     dependencies:
-      '@qualweb/crawler': 0.3.15
-      '@qualweb/dom': 0.2.6
-      '@qualweb/earl-reporter': 0.4.3
-      '@qualweb/evaluation': 0.3.18
-      '@qualweb/locale': 0.1.11
+      '@qualweb/crawler': 0.3.18
+      '@qualweb/dom': 0.2.9
+      '@qualweb/earl-reporter': 0.4.6
+      '@qualweb/evaluation': 0.3.37
+      '@qualweb/locale': 0.1.16
       colors: 1.4.0
       puppeteer: 19.10.1(typescript@5.3.3)
       puppeteer-cluster: 0.23.0(puppeteer@19.10.1)
@@ -699,6 +699,7 @@ packages:
     transitivePeerDependencies:
       - '@types/puppeteer'
       - bufferutil
+      - debug
       - encoding
       - playwright-extra
       - puppeteer-core
@@ -707,59 +708,59 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@qualweb/counter@0.2.0:
-    resolution: {integrity: sha512-H/bkGMnWrHQmy5t/yyT4E6MMtOcfKTWKB9PstA6TXfWRWKZ3iQeXcTyZYFsNp3E+8Fjvb+MnmVwcdUCEjaUIkg==}
+  /@qualweb/counter@0.2.3:
+    resolution: {integrity: sha512-TdO2AwOWixsXT2kf0hVAwowJIS5TuBaZu5Z/0reHY+8fCMkZLulcNwmXZMmg3KBA17oPf4x9Y07X7SRyZuuC/A==}
     dev: false
 
-  /@qualweb/crawler@0.3.15:
-    resolution: {integrity: sha512-du1Cmhsr4LrKHd9MefzmOefIeufnFgsGgEqzSnM/HTcrViOxXP4dQcl6jO9rwmVlZ2PbVj5Y1Cl0+w8S8bCcrQ==}
+  /@qualweb/crawler@0.3.18:
+    resolution: {integrity: sha512-LMEnMwYVqbQCFf0EZDCNmY/XsWgwWc8QwB2oT3mRElOOMJI+WLMRWkjdkGebZwMmKmSDJoZT2xOx59VivZYQbQ==}
     engines: {node: '>=12.0.0'}
     dependencies:
       log-update: 4.0.0
     dev: false
 
-  /@qualweb/dom@0.2.6:
-    resolution: {integrity: sha512-WcAPb1gPT2AU6S3MnAqAQC/TeAtLyNKzdhSuzuMk3tl92sBRpCsls9Rvs83SS1Bpm0VmIIhuHLr8CxhpKoqRFQ==}
+  /@qualweb/dom@0.2.9:
+    resolution: {integrity: sha512-sSFDCjg2suEg9pu2u5mxwrrbTl/BbsINxpvuWz6PK/TyCBlk6Wxtg+82NxIKBwExzh8Q2Gi99/SWCyIF8OuApQ==}
     engines: {node: '>=12.0.0'}
     dependencies:
-      node-fetch: 2.6.9
+      axios: 1.6.5
     transitivePeerDependencies:
-      - encoding
+      - debug
     dev: false
 
-  /@qualweb/earl-reporter@0.4.3:
-    resolution: {integrity: sha512-zW3bg0a4tJF4rfVShJmTFNjJmG80/GK4V4VudtJ7ZTZeCbg6LM7MWsFw8DR487oYu/GlPGyAXiLpy2pInyjiEw==}
+  /@qualweb/earl-reporter@0.4.6:
+    resolution: {integrity: sha512-sHuZH9cZzW/dyK/voZNYNH5Yjah0wFhz3wrh3+ezrH8aZgatk81wDD8OWuZ7YkGjBJ2MjF70YUFbexIf6eYYTg==}
     engines: {node: '>=12.0.0'}
     dependencies:
       lodash.clonedeep: 4.5.0
     dev: false
 
-  /@qualweb/evaluation@0.3.18:
-    resolution: {integrity: sha512-Q3Ve2PkxvRDXZParBbRJ8juFF3RVnZYKwLkg5BxAdis+ux/JN3QMjyB0pzEiUV1mBhrI89asFTzlkLZxmrzP9Q==}
+  /@qualweb/evaluation@0.3.37:
+    resolution: {integrity: sha512-ykVOc3bJ6caRdjSTgwm3kaY+deI4cWMen9SWBNc3D/T2rZC6k/3Fb/XVq75xfX2A/+Mp8RXXkSmntkzgpMms+w==}
     dependencies:
-      '@qualweb/act-rules': 0.6.11
-      '@qualweb/best-practices': 0.6.7
-      '@qualweb/counter': 0.2.0
-      '@qualweb/qw-page': 0.2.13
-      '@qualweb/util': 0.5.19
-      '@qualweb/wcag-techniques': 0.3.7
+      '@qualweb/act-rules': 0.6.22
+      '@qualweb/best-practices': 0.6.14
+      '@qualweb/counter': 0.2.3
+      '@qualweb/qw-page': 0.2.17
+      '@qualweb/util': 0.5.32
+      '@qualweb/wcag-techniques': 0.3.14
     dev: false
 
-  /@qualweb/locale@0.1.11:
-    resolution: {integrity: sha512-aEl3OluZsAzLeNcj8d+zbhToXqXqF7JpVvSMvg/v1Nq4b2y5B0a626Q9fLYwIL2DG96XCt5mgfkj7zJ/MP/t+A==}
+  /@qualweb/locale@0.1.16:
+    resolution: {integrity: sha512-ZMMLPa7BTw0CwbA0io/5jeuWSE2MmnjljcnUm/UcQRrIKGRkL1HoKHFDTTt1AzvaP34qZtfjEteEMAeDmw7ivA==}
     engines: {node: '>=12.0.0'}
     dependencies:
       lodash.clonedeep: 4.5.0
     dev: false
 
-  /@qualweb/qw-element@0.2.8:
-    resolution: {integrity: sha512-NO1le8YdDjfK4LD9axxYvse5C3Yd3byyUHXVWq5HaQ9xRn8NqXA8TI6bjID1KI1OEjusQ8UNah/UNeyVutpZxQ==}
+  /@qualweb/qw-element@0.2.12:
+    resolution: {integrity: sha512-5VbL5e8GgqAJAhLPE59d/ax47st5+fyNyhV/HyQRmmF4lRY0gYGlUqnYfjyzg69K+9XF9yq7lINpJOpC6+R5zA==}
     dev: false
 
-  /@qualweb/qw-page@0.2.13:
-    resolution: {integrity: sha512-zT9WIBA1HIGVsiBoIDzlmeF45MMwamDEivOZq6klHZI8YATZuioLZRVecrY8JPuG52JVQf0tvq37eHQqH9BRvQ==}
+  /@qualweb/qw-page@0.2.17:
+    resolution: {integrity: sha512-ofsjdbDS7nLNBQugK++/YkYrvoiPXwcAm1YjWtmVYTPw88qWXX+6D49AchgznaynDGpdWDH69eabmK57zJMTHQ==}
     dependencies:
-      '@qualweb/qw-element': 0.2.8
+      '@qualweb/qw-element': 0.2.12
     dev: false
 
   /@qualweb/types@0.7.25(typescript@5.3.3):
@@ -775,15 +776,15 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@qualweb/util@0.5.19:
-    resolution: {integrity: sha512-ytr6IgmedKYu30gZiPjXVVIMis5+EFflWazVGYSeJNd+Vc/VIiWqouaBsGAzgVQ/motaLwF14TbYm028tROXVQ==}
+  /@qualweb/util@0.5.32:
+    resolution: {integrity: sha512-SgQXH4m2KLzxPYThF0ezDkxX66MP97QAxUjqX6xjOZHsjar71CVEJRbfE9kM1LmQGLTDKEdc25FuysYQPPctoQ==}
     dependencies:
       franc-min: 3.1.0
       string-pixel-width: 1.11.0
     dev: false
 
-  /@qualweb/wcag-techniques@0.3.7:
-    resolution: {integrity: sha512-gmtcoetkOhOq1SR6yW12du9Tjza1QawKvdlilKM/zYnf9KYYgrLGP74laTW2DNz3rBAQmFs/SjRTpSUefmxzAA==}
+  /@qualweb/wcag-techniques@0.3.14:
+    resolution: {integrity: sha512-Ps4bNZsaE2rb0JqpFM8/kjo9Wq92/D49U3WrDBtgc9+VsMWfgDoBgsBksJM/IFo9crhD5/doETYQva+rgtNnJQ==}
     dev: false
 
   /@remusao/guess-url-type@1.2.1:
@@ -1083,10 +1084,24 @@ packages:
       lodash: 4.17.21
     dev: true
 
+  /asynckit@0.4.0:
+    resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
+    dev: false
+
   /available-typed-arrays@1.0.5:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /axios@1.6.5:
+    resolution: {integrity: sha512-Ii012v05KEVuUoFWmMW/UQv9aRIc3ZwkWDcM+h5Il8izZCtRVpDUfwpoFf7eOtajT3QiGR4yDUx7lPqHJULgbg==}
+    dependencies:
+      follow-redirects: 1.15.4
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -1357,6 +1372,13 @@ packages:
     engines: {node: '>=0.1.90'}
     dev: false
 
+  /combined-stream@1.0.8:
+    resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
+    engines: {node: '>= 0.8'}
+    dependencies:
+      delayed-stream: 1.0.0
+    dev: false
+
   /commander@11.1.0:
     resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
     engines: {node: '>=16'}
@@ -1532,6 +1554,11 @@ packages:
       has-property-descriptors: 1.0.0
       object-keys: 1.1.1
     dev: true
+
+  /delayed-stream@1.0.0:
+    resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
+    engines: {node: '>=0.4.0'}
+    dev: false
 
   /detect-indent@6.1.0:
     resolution: {integrity: sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==}
@@ -1789,6 +1816,16 @@ packages:
         optional: true
     dev: true
 
+  /follow-redirects@1.15.4:
+    resolution: {integrity: sha512-Cr4D/5wlrb0z9dgERpUL3LrmPKVDsETIJhaCMeDfuFYcqa5bldGV6wBsAN6X/vxlXQtFBMrXdXxdL8CbDTGniw==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
+
   /for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
@@ -1828,8 +1865,17 @@ packages:
       signal-exit: 4.0.1
     dev: false
 
+  /form-data@4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
+    dev: false
+
   /franc-min@3.1.0:
-    resolution: {integrity: sha1-3h8Lsmz4EQ6WHnsIr63f8626vBE=}
+    resolution: {integrity: sha512-YFHFyxHrIQ1Qqq7cSahcCUu9kDIa/sVMA1nQz0dHEgypLxpxLVxP5jgo0WSBE7lJuVIOAPr3QAhHAHRCQZL2AQ==}
     dependencies:
       trigram-utils: 0.1.1
     dev: false
@@ -2686,6 +2732,18 @@ packages:
       braces: 3.0.2
       picomatch: 2.3.1
     dev: true
+
+  /mime-db@1.52.0:
+    resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
+    engines: {node: '>= 0.6'}
+    dev: false
+
+  /mime-types@2.1.35:
+    resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
+    engines: {node: '>= 0.6'}
+    dependencies:
+      mime-db: 1.52.0
+    dev: false
 
   /mime@1.6.0:
     resolution: {integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==}
