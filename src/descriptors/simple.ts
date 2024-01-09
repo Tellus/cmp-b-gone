@@ -128,7 +128,7 @@ export class SimpleCMPDescriptor extends CMPDescriptor {
   }
 
   async acceptAll(page: Page): Promise<Page> {
-    const tag = `${this.tag}.${SimpleCMPDescriptor.prototype.acceptAll.name} (${page.url()})`;
+    const tag = `${this.tag}.${SimpleCMPDescriptor.prototype.acceptAll.name} (url: ${page.url()}, cmpName: ${this.cmpName})`;
 
     let timespent = 0;
 
