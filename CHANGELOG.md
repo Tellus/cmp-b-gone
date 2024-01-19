@@ -1,5 +1,28 @@
 Changelog
 
+## 0.1.0
+
+### Minor Changes
+
+- b81d7a1: # Rename to @inqludeit/cmp-b-gone
+
+  This change detaches the plugin code (thin, QualWeb-specific wrapper) from the
+  actual CMP handling code (which is meatier and only requires Puppeteer).
+
+  It's part of a refactor to allow QualWeb to integrate CMP handling in its core
+  module without cyclic dependencies in the dependency graph.
+
+### Patch Changes
+
+- dcca760: Silence consola by default
+- dcca760: Add more detailed debug tag to SimpleDescriptor.acceptAll()
+- 0958030: # Various minor hotfixes
+
+  - Update all dependencies.
+  - Updated an example to only import types from puppeteer (cleaner code).
+  - Shifted @qualweb/core to be a peer dependency instead of a direct dependency. This better reflects the plugin/host relationship.
+  - Removed @tsconfig/recommended and rolled its contents directly into tsconfig.json. Referencing the tsconfig.json file from the package doesn't play nice with how test/tsconfig.json imports the root file.
+
 ## 1.1.0
 
 ### Minor Changes
