@@ -1,12 +1,14 @@
-# CMP plugin for QualWeb accessibility evaluator tool
+# CMP suppression for QualWeb accessibility evaluator tool and other uses
 
-The purpose of this plugin is to allow users of QualWeb to try and suppress CMP (Consent Management Platform) banners.
+The purpose of this module is to suppress suppress CMP (Consent Management
+Platform) banners. These "cookie banner" are required on sites operated in the
+European Union, and are thus present on tonnes of websites.
 
-These banners are required on sites operated in the European Union, and are thus present on tonnes of websites.
+It was originally designed for use with the QualWeb Web Accessibility Evaluator,
+but can probably be used in any Puppeteer-based scenario where you want to
+dismiss cookie banners.
 
-The plugin tags onto into QualWeb's pre- and post- hooks and tries to identify the implementation in use on the site. If successful, it suppresses the banner, so it doesn't get evaluated by QualWeb.
-
-The usefulness of this is twofold:
+For QualWeb uses, there are at least two good reasons to use the module:
 
 1. Some websites hide or completely withhold their actual content until consent to a cookie has been given. This plugin enables evaluating those sites with QualWeb by automating the consent action.
 2. Many CMP banners have accessibility issues that are inherent to the implementation, and not the site itself. This causes a skew in the results of sites, giving the impression, for example, that the website has contrast issues when in fact the only component with contrast issues is the banner.
@@ -15,33 +17,42 @@ The usefulness of this is twofold:
 
 # Installation
 
-The package is designed to plug into QualWeb in a NodeJS project, and thus cannot be used if QualWeb's CLI is used (for example, if installed globally).
-
 Install it like any other package:
 
-`pnpm install @inqludeit/qualweb-plugin-cmp`
+`pnpm install @inqludeit/cmp-b-gone`
 
-## Basic use
+## Using with QualWeb
 
 Sometime *before* calling `QualWeb#evaluate()`:
 
 ```typescript
-import { createPlugin } from '@inqludeit/qualweb-plugin-cmp';
-// Or use the non-async version.
-qualweb.use(await createPlugin());
+import { CMPManager } from '@inqludeit/cmp-b-gone';
+
+const cmpManager = await CMPManager.createManager(srcGlobs, includeBuiltIn)
+
+qualweb.use({
+  async afterPageLoad(page) {
+    await manager.parsePage(page, {
+      failOnMissing: true,
+    });
+  },
+});
 ```
 
 This will initialise the plugin with all the descriptors present in the package's `descriptors` folder.
 
 During evaluation, the plugin will try to identify the CMP in use on a site to be evaluated. If it *fails* to detect any CMP, the evaluation will also be caused to fail. For this reason, we recommend running single URLs through QualWeb, since any missing descriptors will throw for the entire task.
 
-## Beyond basic use
+### Beyond basic use
 
-The plugin itself is just a wrapper around `CMPManager#parsePage()`, called in the `afterPageLoad` stage of QualWeb's evaluation.
+As you can see, the minimal use is just a wrapper around
+`CMPManager#parsePage()`, called in the `afterPageLoad` stage of QualWeb's
+evaluation.
 
-For more advanced scenarios, build your own plugin with the specific steps you require. A few examples follow.
+For more advanced scenarios, build your own plugin with the specific steps you
+require. A few examples follow.
 
-### Storing known descriptors between pages
+#### Storing known descriptors between pages
 
 ```typescript
 // Initialise the manager with default/built-in descriptors.
@@ -81,11 +92,14 @@ const plugin: QualwebPlugin = {
 }
 ```
 
-### Re-using results
+#### Re-using results
 
-`CMPManager#parsePage()` returns the name of the detected descriptor along with the cookie data were stored when the banner dismissed (that is, consent was given).
+`CMPManager#parsePage()` returns the name of the detected descriptor along with
+the cookie data were stored when the banner dismissed (that is, consent was
+given).
 
-By passing that cookie data into a page before loading a target URL, you can effectively suppress the CMP banner for subsequent loads on the same domain.
+By passing that cookie data into a page before loading a target URL, you can
+effectively suppress the CMP banner for subsequent loads on the same domain.
 
 ```typescript
 // Assume this has been filled previously, in a manner similar to the previous example.
