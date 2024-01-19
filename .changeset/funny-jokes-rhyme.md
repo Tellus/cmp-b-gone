@@ -1,5 +1,5 @@
 ---
-"@inqludeit/qualweb-plugin-cmp": patch
+"@inqludeit/cmp-b-gone": patch
 ---
 
 Silence consola by default

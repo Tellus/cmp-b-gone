@@ -1,11 +1,11 @@
 {
-  "name": "@inqludeit/qualweb-plugin-cmp",
-  "version": "1.1.0",
-  "description": "Library and QualWeb plugin to dismiss cookie banners.",
+  "name": "@inqludeit/cmp-b-gone",
+  "version": "0.0.0",
+  "description": "QualWeb plugin to dismiss cookie banners during evaluation.",
   "engines": {
     "node": ">=18.0.0"
   },
-  "packageManager": "pnpm@8.3.1",
+  "packageManager": "pnpm@8.14.1",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
   "directories": {
@@ -52,7 +52,6 @@
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
-    "@qualweb/types": "^0.7.25",
     "@types/chai": "^4.3.11",
     "@types/glob": "^8.1.0",
     "@types/js-yaml": "^4.0.9",
@@ -76,6 +75,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tellus/qualweb-plugin-cmp.git"
+    "url": "https://github.com/tellus/cmp-b-gone.git"
   }
 }
