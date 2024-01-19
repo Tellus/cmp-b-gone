@@ -40,9 +40,6 @@ devDependencies:
   '@istanbuljs/nyc-config-typescript':
     specifier: ^1.0.2
     version: 1.0.2(nyc@15.1.0)
-  '@qualweb/types':
-    specifier: ^0.7.25
-    version: 0.7.25(typescript@5.3.3)
   '@types/chai':
     specifier: ^4.3.11
     version: 4.3.11
@@ -762,19 +759,6 @@ packages:
     dependencies:
       '@qualweb/qw-element': 0.2.12
     dev: false
-
-  /@qualweb/types@0.7.25(typescript@5.3.3):
-    resolution: {integrity: sha512-4PpEIjB0NRJ2z69ml2wFh8OHLXh3zg8HlpCNmpuqANid2rLuZwb5P9+/ah7aWZmSQ9/Mm9xcJGXhvyvQoHmKWA==}
-    engines: {node: '>=12.0.0'}
-    dependencies:
-      puppeteer: 19.10.1(typescript@5.3.3)
-    transitivePeerDependencies:
-      - bufferutil
-      - encoding
-      - supports-color
-      - typescript
-      - utf-8-validate
-    dev: true
 
   /@qualweb/util@0.5.32:
     resolution: {integrity: sha512-SgQXH4m2KLzxPYThF0ezDkxX66MP97QAxUjqX6xjOZHsjar71CVEJRbfE9kM1LmQGLTDKEdc25FuysYQPPctoQ==}

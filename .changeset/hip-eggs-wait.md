@@ -1,5 +1,5 @@
 ---
-"@inqludeit/qualweb-plugin-cmp": patch
+"@inqludeit/cmp-b-gone": patch
 ---
 
 # Various minor hotfixes
