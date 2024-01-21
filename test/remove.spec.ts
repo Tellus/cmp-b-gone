@@ -97,4 +97,41 @@ describe('Descriptor removal', () => {
     expect(manager.descriptorNames).to.have.length(1);
     expect(manager.descriptorNames).to.include(descriptorToKeep.name);
   });
+
+  it('Should correctly remove all descriptors (10 descriptors)', async () => {
+    // Create manager with no descriptors.
+    const manager = await CMPManager.createManager(undefined, false);
+
+    const descriptors: SimpleCMPDescriptor[] = [];
+
+    const descriptorCount = 10;
+
+    for (let i = 0; i < descriptorCount; i ++) {
+      descriptors.push(new SimpleCMPDescriptor(
+        `descriptor-${i}`,
+        { cookies: ['cookie-name'] },
+        ['#cookie-banner-div'],
+        ['#cookie-banner-accept-all'],
+        ['#cookie-banner-accept-default'],
+      ));
+    }
+
+        // Add a descriptor with a *different* name than the one we want to try and
+    // remove.
+    manager.addDescriptors(descriptors);
+
+    // Make sure it was correctly added.
+    expect(manager.descriptorNames).to.have.length(descriptors.length);
+
+    for (const d of descriptors) {
+      expect(manager.descriptorNames).to.include(d.name);
+    }
+
+    // Expect an attempt to remove a non-existent descriptor to fail.
+    for (const d of descriptors) {
+      manager.removeDescriptor(d.name);
+    }
+
+    expect(manager.descriptorNames).to.have.length(0);
+  });
 });
