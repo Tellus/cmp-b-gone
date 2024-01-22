@@ -1,3 +1,5 @@
-export { CMPDescriptor, CMPHandleFunction, isCMPDescriptor } from './descriptor';
+export * from './descriptor';
+import NullDescriptor from './null';
+export { NullDescriptor };
 export { SimpleCMPDescriptor } from './simple';
 export { YamlDescriptor } from './yaml';
