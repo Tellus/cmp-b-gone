@@ -1,6 +1,6 @@
 {
   "name": "@inqludeit/cmp-b-gone",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "QualWeb plugin to dismiss cookie banners during evaluation.",
   "engines": {
     "node": ">=18.0.0"

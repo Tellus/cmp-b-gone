@@ -1,5 +1,11 @@
 Changelog
 
+## 0.2.0
+
+### Minor Changes
+
+- 2c31d63: Add `CMPManager.removeDescriptor()`
+
 ## 0.1.0
 
 ### Minor Changes
