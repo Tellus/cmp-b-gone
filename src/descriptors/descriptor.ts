@@ -224,9 +224,9 @@ export abstract class CMPDescriptor {
    * @param cookieName Name of the cookie that is stored when this CMP is
    * accepted.
    */
-  constructor(readonly name:string, protected readonly storageOptions: CookieConsentStorageOptions | LocalStorageConsentStorageOptions) {
+  constructor(readonly name:string, storageOptions: CookieConsentStorageOptions | LocalStorageConsentStorageOptions) {
     if (isLocalStorageConsentStorageOptions(storageOptions) || isCookieConsentStorageOptions(storageOptions)) {
-      // No-op
+      this.storageOptions = storageOptions;
     } else {
       throw new Error('Type of storageOptions must be CookieConsentStorageOptions or LocalStorageConsentOptions');
     }
@@ -242,6 +242,12 @@ export abstract class CMPDescriptor {
     } else {
       this.#tagRef = tagRef;
     }
+  }
+
+  protected storageOptions: CookieConsentStorageOptions | LocalStorageConsentStorageOptions;
+
+  getStorageOptions(): CookieConsentStorageOptions | LocalStorageConsentStorageOptions {
+    return _.cloneDeep(this.storageOptions);
   }
 
   /**
