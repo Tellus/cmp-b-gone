@@ -115,6 +115,18 @@ export class CMPManager {
     return this;
   }
 
+  removeDescriptor(descriptorName: string): this {
+    const descriptorIndex = this.descriptors.findIndex(d => d.name === descriptorName);
+
+    if (descriptorIndex < 0) {
+      throw new Error(`No descriptor named "${descriptorName}".`);
+    }
+
+    this.descriptors.splice(descriptorIndex, 1);
+
+    return this;
+  }
+
   /**
    * Tries to import a CMPDescriptor from the given path, by running the default
    * exported function.

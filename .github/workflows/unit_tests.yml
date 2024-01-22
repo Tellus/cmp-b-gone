@@ -2,10 +2,6 @@
 name: Unit Tests
 on:
   workflow_call:
-    inputs:
-      unused:
-        type: boolean
-        description: Unused, but you must define something to use workflow_call.
 
 jobs:
   test:
@@ -21,4 +17,4 @@ jobs:
         run: pnpm build
 
       - name: Test
-        run: pnpm test
+        run: pnpm test:all

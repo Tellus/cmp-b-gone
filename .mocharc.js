@@ -5,10 +5,11 @@ module.exports = {
   "ui": "bdd",
   "file": [
   ],
-  "spec": "test/**/*.spec.ts",
+  // "spec": "test/**/*.spec.ts",
   "require": [
     "tsconfig-paths/register",
     "ts-node/register",
+    "./test/init.ts"
   ],
 
 }
