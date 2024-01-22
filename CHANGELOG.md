@@ -1,5 +1,11 @@
 Changelog
 
+## 0.2.1
+
+### Patch Changes
+
+- 41136ed: Add some more exported types. No changes to functionality.
+
 ## 0.2.0
 
 ### Minor Changes
